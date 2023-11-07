@@ -25,6 +25,10 @@ __pycache__/
 
 # Arquivos de logs
 *.log
+*.log
+activate.bat
+activate.ps1
+deactivate.bat
 
 # Django
 *.log
