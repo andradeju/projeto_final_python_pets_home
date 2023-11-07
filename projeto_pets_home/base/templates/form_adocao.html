@@ -1,0 +1,18 @@
+{% extends "home.html" %}
+{% load bootstrap5 %}
+<body>
+  <main class="container">
+    {% include "nav.html" %}
+{% block content %}
+<h1>DOGS SÃO FOFINHOS</h1>
+{% if sucesso %}
+<p class="alert alert-success">Cadastro efetuado com sucesso!</p>
+{% else %}
+<form action="" method="POST" id="form">
+{% csrf_token %}
+  <button type="submit" class="btn btn-primary btn-block">Finalizar cadastro</button>
+</form>
+{% endif %}
+{% endblock %}
+</main>
+</body>
