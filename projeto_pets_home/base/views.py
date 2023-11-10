@@ -7,8 +7,8 @@ def home(request):
 def adocao(request):
   return render(request, 'adocao.html')
 
-def form_adocao(request):
-  return render(request, 'form_adocao.html')  
+def animal(request):
+  return render(request, 'animal.html') 
 
 def como_ajudar(request):
   return render(request, 'como_ajudar.html')  
