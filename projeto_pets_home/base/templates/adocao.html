@@ -1,13 +1,19 @@
 {% extends "home.html" %}
 {% load bootstrap5 %}
-<body>
   <main class="container">
     {% include "nav.html" %}
-{% block content %}
-<h1>DOGS SÃO FOFINHOS</h1>
-<div class="mb-5">
-  <a href="" class="btn btn-primary btn-sm px-4">Quero adotar</a>
+    {% block content %}
+<h1>DOGS FOFINHOS</h1>
+<div class="row">
+      <div class="card mt-4 mx-3" style="width: 16rem;">
+              <img src="../static/images/juca.JPG" class="card-img-top mt-2" alt=""/>
+              <div class="card-body">
+                  <h3 class="h4 card-title text-center">Juca</h3>
+                  <p class=" card-text text-center">
+                      <a href="/animal" class="btn btn-primary btn-sm px-4">Quero adotar</a>
+                  </p>
+              </div>
+      </div>
 </div>
-{% endblock %}
 </main>
-</body>
+{% endblock %}

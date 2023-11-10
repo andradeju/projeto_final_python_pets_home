@@ -1,0 +1,100 @@
+{% extends "adocao.html" %}
+{% load bootstrap5 %}
+{% block content %}
+<div class="row">
+  <div class="col-md-4 col-14 mx-auto">
+          <div class="card mt-4">
+              <img src="../static/images/juca.JPG" width="400" alt="cachorro lindo"
+              class="img-fluid img-thumbnail" />
+              <div class="card-body">
+                  <h1 class="h5 text-center">Juca</h1>
+                  <h2 class="h6">Espécie: Cachorro</h2>
+                  <h2 class="h6">Idade: 8</h2>
+                  <h2 class="h6">Raça: West Highland White Terrier</h2>
+                  <h2 class="h6">Histórico de Saúde:</h2>
+              </div>
+          </div>
+  </div>
+</div>
+  <h2 class="text-body-emphasis">Formulário</h2>
+  <form class="row g-3">
+    <div class="col-md-6">
+      <label for="inputNome" class="form-label">Nome Completo</label>
+      <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Nome Completo">
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-md-4">
+      <label for="inputCPF" class="form-label">CPF</label>
+      <input type="text" class="form-control" placeholder="Apenas números" aria-label="Digite o CPF" maxlength="11" pattern="[0-9]*">
+    </div>
+    <div class="col-md-3">
+      <label for="inputDataNascimento" class="form-label">Data de Nascimento</label>
+      <input type="date" class="form-control" id="inputDataNascimento" name="data_nascimento" required>
+    </div>
+    <div class="col-md-5">
+      <label for="inputAddress2" class="form-label">Telefone</label>
+      <input type="text" class="form-control" id="inputTelefone" placeholder="Apenas números">
+    </div>
+    <div class="col-md-6">
+      <label for="inputProfissao" class="form-label">Profissão</label>
+      <input type="text" class="form-control" aria-label="Profissao">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Endereço</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="Rua, nº, complemento">
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">Cidade</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">Estado</label>
+      <select id="inputState" class="form-select">
+        <option selected>Escolha...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">CEP</label>
+      <input type="text" class="form-control" id="inputCEP">
+    </div>
+    <div class="mb-3">
+      <label for="razao_adocao" class="form-label">Motivo da Adoção</label>
+      <textarea class="form-control" id="razao_adocao" name="razao_adocao" rows="3" required></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="experiencia_anterior" class="form-label">Em caso de viagem, onde você deixará o animal adotado?</label>
+    <textarea class="form-control" id="experiencia_anterior" name="experiencia_anterior" rows="3"></textarea>
+</div>
+  <div class="mb-3">
+    <label for="experiencia_anterior" class="form-label">Experiência Anterior com Animais de Estimação</label>
+    <textarea class="form-control" id="experiencia_anterior" name="experiencia_anterior" rows="3"></textarea>
+    <div class="mb-3 mt-4">
+      <label for="experiencia_anterior" class="form-label">Tem algum animal em sua residência?</label>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        Sim
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-label" for="flexCheckChecked">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+        Não
+      </label>
+    </div>
+  </div>
+</div>
+  </form>
+    <p class="alert alert-success"></p>
+  {% if sucesso %}
+  {% else %}
+  <form action="" method="POST" id="form">
+    {% csrf_token %}
+      <button type="submit" class="btn btn-primary btn-block">Finalizar cadastro</button>
+  </form>
+  {% endif %}
+{% endblock %}
