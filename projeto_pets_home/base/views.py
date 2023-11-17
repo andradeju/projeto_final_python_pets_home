@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from base.forms import AnimalForm
+from base.models import AnimalAdocao
 
 def home(request):
   return render(request, 'home.html')
@@ -16,9 +17,11 @@ def animal(request):
     form = AnimalForm(request.POST)
     if form.is_valid():
       sucesso = True
+      AnimalAdocao.objects.create(**form.cleaned_data)
+      form = AnimalForm()
   contexto = {
         'form': form,
-        'successo': sucesso
+        'sucesso': sucesso
   }  
   return render(request, 'animal.html', contexto) 
 
