@@ -31,10 +31,6 @@ ESTADOS_CHOICES = (
     ('TO', 'Tocantins'),
 )
 
-TEM_ANIMAL_CHOICES = (
-  ('SIM', 'Sim'),
-  ('NÃO', 'Não')
-)
 
 class AnimalForm(forms.Form):
   nome = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Nome Completo'}),)
@@ -50,4 +46,4 @@ class AnimalForm(forms.Form):
   motivoAdocao = forms.CharField(label='Motivo da Adoção', widget=forms.Textarea(attrs={'placeholder':'', 'rows':'3'}),)
   emCasoDeViagem = forms.CharField(label='Em caso de viagem, onde você deixará o animal adotado?', widget=forms.TextInput(attrs={'placeholder':''}),)
   experienciaAnterior = forms.CharField(label='Experiência Anterior com Animais de Estimação', widget=forms.Textarea(attrs={'placeholder':'', 'rows': '2'}),)
-  temAnimal = forms.ChoiceField(label='Tem algum animal em sua residência?', choices=TEM_ANIMAL_CHOICES, widget=forms.RadioSelect)
+  temAnimal = forms.ChoiceField(label='Tem algum animal em sua residência?', choices=[(True, 'Sim'), (False, 'Não')], widget=forms.RadioSelect)
