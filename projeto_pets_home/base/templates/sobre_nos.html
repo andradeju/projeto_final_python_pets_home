@@ -1,11 +1,69 @@
-{% extends "home.html" %}
-{% load bootstrap5 %}
-<body>
-  <main class="container">
-    {% include "nav.html" %}
+{% extends "layout.html" %} 
+{% load bootstrap5 %} 
+{% load static %} 
 {% block content %}
-<h1>DOGS SÃO FOFINHOS DEMAISS</h1>
-
-{% endblock %}
+<main class="container-fluid">
+  <h1 class="text-center">Somos a Pet's Home</h1>
+  <div class="d-flex justify-content-center">
+    <img
+      src="{% static 'images/3-1627065210.jpeg' %}"
+      class="img-fluid img-thumbnail mt-3 mb-4"
+      alt="cachorro deitado"
+    />
+  </div>
+  <div class="row mt-4">
+    <p>
+      Bem-vindos à nossa história, um conto de compaixão e dedicação aos animais
+      desabrigados. 
+    </p>
+    <p>
+      Fundada em 2010, a Pet's Home começou como um sonho de criar
+      um santuário seguro para cães desabrigados. Hoje, somos mais do que apenas
+      um abrigo; somos uma comunidade dedicada a proporcionar amor, cuidado e
+      uma segunda chance para nossos amigos de quatro patas.
+    </p>
+    <p>
+      Aqui na "Pet's Home", mergulhamos de coração na missão de proporcionar um
+      lar amoroso para aqueles que aguardam ansiosamente por uma família para
+      chamar de sua. Somos mais que um abrigo; somos um refúgio de esperança,
+      onde os latidos alegres e os ronronados afetuosos ecoam por corredores
+      cheios de histórias de resiliência e superação.
+    </p>
+    <div class="mt-5 col-lg-6 col-sm-12 align-items">
+      <h2 class="mb-5 text-center">Nosso Propósito</h2>
+      <p>
+        No "Pet's Home", nossa paixão vai além do simples cuidado. Somos uma
+        associação comprometida em oferecer não apenas abrigo, mas amor, cuidado
+        e uma segunda chance para animais que enfrentam desafios inimagináveis.
+        Cada patinha que cruza nossas portas é recebida com calor humano e a
+        promessa de um futuro repleto de alegria.
+      </p>
+      <p>
+        Nossa jornada começa com a missão de encontrar lares adotivos para esses
+        animais especiais, criando laços que transcendem as barreiras entre
+        espécies. Acreditamos que cada animal merece uma família para chamar de
+        sua, e é isso que nos impulsiona a trabalhar incansavelmente todos os
+        dias.
+      </p>
+      <p>
+        Mas nosso trabalho não para por aí. Também nos esforçamos para educar o
+        público sobre a importância da adoção responsável de animais de
+        estimação e do bem-estar animal. Oferecemos programas de conscientização
+        e voluntariado para envolver a comunidade e promover uma cultura de
+        compaixão e respeito pelos animais.
+      </p>
+    </div>
+    <div class="d-flex align-items-end justify-content-center col-lg-6 col-sm-12">
+      <img
+        src="{% static 'images/cachorro-fofo-brincando-com-mulher-para-adocao.jpg' %}"
+        class="img-fluid img-thumbnail"
+        alt="cachorro no colo da mulher"
+      />
+    </div>
+  </div>
+  <h4 class="text-center mt-5">
+    Juntos, estamos construindo pontes de amor que conectam corações humanos a
+    patinhas peludas, transformando vidas de ambos os lados.
+  </h4>
 </main>
-</body>
+{% endblock %}
