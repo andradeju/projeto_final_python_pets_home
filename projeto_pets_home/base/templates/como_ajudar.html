@@ -1,11 +1,58 @@
-{% extends "home.html" %}
+{% extends "layout.html" %}
 {% load bootstrap5 %}
+{% load static %} 
 <body>
   <main class="container">
-    {% include "nav.html" %}
 {% block content %}
-<h1>DOGUINHOS SÃO LEGAIS</h1>
-
+<h1 class="text-center">Doações</h1>
+<div class="row mt-5">
+<h3>Precisamos de sua ajuda!</h3>
+<div class="mt-2 col-lg-6 col-sm-12 align-items">
+<p class="txt-doacao">Na Pet's Home, acreditamos que cada pequeno gesto faz uma grande diferença na vida desses amigos peludos que tanto precisam de amor e cuidado. </p>
+</div>
+<div class="d-flex justify-content-center col-lg-6 col-sm-12">
+  <img
+    src="{% static 'images/cachorro-em-abrigo-com-voluntario.jpg' %}"
+    class="img-doacao img-thumbnail"
+    alt="gato"
+  />
+</div>
+</div>
+<div class="row text-center mt-5 mb-5">
+<h5>Aqui estão algumas maneiras pelas quais você pode se envolver e fazer parte da mudança:</h5>
+<div class="col-md-4 mt-3">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Seja um Voluntário</h5>
+      <p class="card-text">Junte-se à nossa equipe de voluntários apaixonados e compartilhe seu tempo e carinho diretamente com nossos animais</p>
+      <button class="btn btn-success">Ser Voluntário</button>
+    </div>
+  </div>
+</div>
+<div class="col-md-4 mt-3">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Doações São Bem-Vindas</h5>
+      <p class="card-text">Seja uma contribuição única ou uma doação mensal, cada valor doado nos ajuda a oferecer cuidados adequados.</p>
+      <button class="btn btn-success">Doação</button>
+    </div>
+  </div>
+</div>
+<div class="col-md-4 mt-3">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Participe de Eventos</h5>
+      <p class="card-text">Esteja atento aos eventos promovidos pelo abrigo, como feiras de adoção e palestras educacionais</p>
+      <button class="btn btn-success">Calendário</button>
+    </div>
+  </div>
+</div>
+</div>
+<h4 class="text-center mt-5 mb-5">
+  Juntos, estamos construindo pontes de amor que conectam corações humanos a
+  patinhas peludas, transformando vidas de ambos os lados.
+</h4>
+</main>
 {% endblock %}
 </main>
 </body>
