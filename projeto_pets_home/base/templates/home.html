@@ -1,19 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-br" data-bs-theme="auto">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet's Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style.css">
-</head>
+{% extends "layout.html" %}
+{% load bootstrap5 %}
+{% load static %}
 <body>
   <main class="container">
-    {% include "nav.html" %}
     {% block content %} 
     <h1>A Pet's Home</h1>
     <p>Bem-vindo à Pet's Home, o lar amoroso para animais que aguardam ansiosamente por uma família para chamarem de sua. Somos uma associação dedicada a cuidar e proteger animais desabrigados, oferecendo-lhes amor, cuidado e esperança. Nossa missão é encontrar lares adotivos para esses animais especiais, proporcionando alegria e carinho tanto para eles quanto para suas novas famílias. Explore nosso site e descubra como você pode fazer a diferença na vida de um animal necessitado. Junte-se a nós nesta jornada de compaixão e amor pelos pets!</p>
+    <div>
+    <h2 class="mt-4 text-center">Adote</h2>
+    <div class="mb-3 mt-3 row d-flex align-items-center justify-content-evenly">
+    <img
+    src="{% static 'images/bonito-cao.jpg' %}"
+    class="img-home"
+    alt="gato andando"
+  />
+    <img
+    src="{% static 'images/lindo-cachorro.jpg' %}"
+    class="img-home m-2 img-thumbnail"
+    alt="cachorro"
+  />
+  <img
+  src="{% static 'images/gatinho.jpg' %}"
+  class="img-home img-thumbnail"
+  alt="cachorro"
+/>
+  <img
+  src="{% static 'images/gatinho-fofo.jpg' %}"
+  class="img-home m-2 img-thumbnail"
+  alt="cachorro"
+/>    
+  </div>
+</div>
     {% endblock %}
   </main>
 </body>
