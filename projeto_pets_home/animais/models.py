@@ -13,7 +13,7 @@ class Animal(models.Model):
   peso = models.PositiveIntegerField(null=True)
   raca = models.CharField(max_length=50)
   historico_saude = models.TextField()
-  imagem = models.ImageField(upload_to='static/images/')
+  imagem = models.ImageField(upload_to='imagens/')
 
   def __str__(self):
     return f'{self.nome} - {self.especie} : {self.idade}'
