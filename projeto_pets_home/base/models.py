@@ -15,5 +15,11 @@ class AnimalAdocao(models.Model):
   motivoAdocao = models.TextField()
   emCasoDeViagem = models.TextField()
   experienciaAnterior = models.TextField()
-  temAnimal = models.BooleanField(default=False)
+  temAnimal = models.BooleanField(choices=[(True, 'Sim'), (False, 'Não')], default=False)
   data = models.DateTimeField(auto_now_add=True)
+  def __str__(self):
+    return f'{self.nome} [{self.cpf}]'
+  class Meta:
+    verbose_name = 'Formulário de Adoção'
+    verbose_name_plural = 'Formulários de Adoções'
+    ordering = ['-data']
