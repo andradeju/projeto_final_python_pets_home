@@ -2,12 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from base.forms import AnimalForm
 from base.models import AnimalAdocao
+from animais.models import Animal
 
 def home(request):
   return render(request, 'home.html')
 
 def adocao(request):
-  return render(request, 'adocao.html')
+  animais = Animal.objects.all()
+  return render(request, 'adocao.html',{'animais':animais})
 
 def animal(request):
   sucesso = False
@@ -24,6 +26,7 @@ def animal(request):
         'sucesso': sucesso
   }  
   return render(request, 'animal.html', contexto) 
+
 
 def como_ajudar(request):
   return render(request, 'como_ajudar.html')  

@@ -1,19 +1,26 @@
-{% extends "home.html" %}
+{% extends "layout.html" %} 
 {% load bootstrap5 %}
-  <main class="container">
-    {% include "nav.html" %}
-    {% block content %}
-<h1>DOGS FOFINHOS</h1>
-<div class="row">
-      <div class="card mt-4 mx-3" style="width: 16rem;">
-              <img src="../static/images/juca.JPG" class="card-img-top mt-2" alt=""/>
-              <div class="card-body">
-                  <h3 class="h4 card-title text-center">Juca</h3>
-                  <p class=" card-text text-center">
-                      <a href="/animal" class="btn btn-primary btn-sm px-4">Quero adotar</a>
-                  </p>
-              </div>
+{% load static %}
+<main class="container">
+  {% block content %}
+  <h1>DOGS FOFINHOS</h1>
+  <div class="row">
+    {% for animal in animais %}
+    <div class="card mt-4 mx-3" style="width: 16rem">
+      <img src="{{ animal.imagem }}" class="card-img-top mt-2" alt="" />
+      <div class="card-body">
+        <h3 class="h4 card-title text-center">{{ animal.nome }}</h3>
+        <p class="card-text text-center">
+          <strong>Espécie:</strong> {{ animal.especie }}<br>
+          <strong>Gênero:</strong> {{ animal.get_genero_display }}<br>
+          <strong>Idade:</strong> {{ animal.idade }} anos<br>
+          <strong>Raça:</strong> {{ animal.raca }}<br>
+          <strong>Histórico de Saúde:</strong> {{ animal.historico_saude }}
+          <a href="/animal" class="btn btn-primary btn-sm px-4">Quero adotar</a>
+        </p>
       </div>
-</div>
+    </div>
+    {% endfor %}
+  </div>
 </main>
 {% endblock %}
