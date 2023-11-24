@@ -1,7 +1,9 @@
 from django import forms
+from base.models import AnimalAdocao
 
 
-ESTADOS_CHOICES = (
+class AnimalForm(forms.Form):
+  ESTADOS_CHOICES = (
     ('AC', 'Acre'),
     ('AL', 'Alagoas'),
     ('AP', 'Amapá'),
@@ -30,9 +32,9 @@ ESTADOS_CHOICES = (
     ('SE', 'Sergipe'),
     ('TO', 'Tocantins'),
 )
-
-
-class AnimalForm(forms.Form):
+  class Meta:
+    model = AnimalAdocao
+    exclude = ['data']
   nome = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Nome Completo'}),)
   email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder':''}),)
   cpf = forms.CharField(max_length=11, label='CPF',widget=forms.TextInput(attrs={'placeholder':'Apenas números'}),)
