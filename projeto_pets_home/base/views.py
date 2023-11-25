@@ -27,7 +27,6 @@ def animal(request):
   }  
   return render(request, 'animal.html', contexto) 
 
-
 def como_ajudar(request):
   return render(request, 'como_ajudar.html')  
 

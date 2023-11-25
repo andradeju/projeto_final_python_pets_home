@@ -2,30 +2,42 @@
 {% load bootstrap5 %}
 {% block content %}
 
+{% if sucesso %}
+  <div class="alert alert-success" role="alert">
+    <i class="fa fa-check-circle"></i> Cadastro efetuado com sucesso!
+  </div>
+{% endif %}
+
 <div class="row">
-  <div class="col-md-4 col-14 mx-auto">
-          <div class="card mt-4">
-              <img src="../static/images/juca.JPG" width="400" alt="cachorro lindo"
-              class="img-fluid img-thumbnail" />
+  {% for animal in animais %}
+  <div class="col-md-3 col-12 mx-auto">
+          <div class="card mt-2">
+            <div class="card mt-2 card-adocao" style="width: 12rem;">
+              <img src="{{ animal.imagem.url }}" class="card-img-top img-thumbnail" alt="" />
               <div class="card-body">
-                  <h1 class="h5 text-center">Juca</h1>
-                  <h2 class="h6">Espécie: Cachorro</h2>
-                  <h2 class="h6">Idade: 8</h2>
-                  <h2 class="h6">Raça: West Highland White Terrier</h2>
-                  <h2 class="h6">Histórico de Saúde:</h2>
+                <h3 class="h5 card-title text-center">{{ animal.nome }}</h3>
+                <p class="small card-text text-center">
+                  <strong>Espécie:</strong> {{ animal.especie }}<br>
+                  <strong>Idade:</strong> {{ animal.idade }} anos<br />
+                  <strong>Raça:</strong> {{ animal.raca }}<br>
+                  <strong>Gênero:</strong> {{ animal.get_genero_display }}<br>
+                  >
+                </p>
               </div>
+            </div>
           </div>
   </div>
-</div>
-
-  <h1 class="text-body-emphasis">Formulário de Adoção</h1>
-  {% if sucesso %}
-    <p class="alert alert-success">Cadastro efetuado com sucessso!</p>
-  {% endif %}
-  <form action="" method="POST" id="form">
-    {% csrf_token %}   
-    {% bootstrap_form form %}
-
-      <button type="submit" class="btn btn-primary btn-block">Finalizar cadastro</button>
-  </form>
-{% endblock %}
+  {% endfor %}
+  </div>
+  <div class="card mt-4">
+    <div class="card-body">
+      <h1 class="text-body-emphasis text-center">Formulário de Adoção</h1>
+      <form action="" method="POST" id="form" class="small-form">
+        {% csrf_token %}   
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-primary btn-block">Finalizar cadastro</button>
+      </form>
+    </div>
+  </div>
+  {% endblock %}
+  
