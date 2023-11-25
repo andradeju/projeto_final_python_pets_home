@@ -18,7 +18,6 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import path
 from base.views import home, adocao, animal, sobre_nos, como_ajudar
 
 urlpatterns = [
