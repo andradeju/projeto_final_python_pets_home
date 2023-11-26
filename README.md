@@ -11,7 +11,7 @@ O projeto final deste Bootcamp de Back-End visa consolidar e aplicar o conhecime
 - **Python**
 - **Django**
 - **HTML5, CSS3 e Bootstrap**
-- **PostgreSQL**
+- **SQLite**
 
 
 ## Estrutura e Requisitos
