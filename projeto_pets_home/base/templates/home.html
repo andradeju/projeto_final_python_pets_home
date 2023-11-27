@@ -8,27 +8,16 @@
     <p>Bem-vindo à Pet's Home, o lar amoroso para animais que aguardam ansiosamente por uma família para chamarem de sua. Somos uma associação dedicada a cuidar e proteger animais desabrigados, oferecendo-lhes amor, cuidado e esperança. Nossa missão é encontrar lares adotivos para esses animais especiais, proporcionando alegria e carinho tanto para eles quanto para suas novas famílias. Explore nosso site e descubra como você pode fazer a diferença na vida de um animal necessitado. Junte-se a nós nesta jornada de compaixão e amor pelos pets!</p>
     <div>
     <h2 class="mt-4 text-center">Adote</h2>
-    <div class="mb-3 mt-3 row d-flex align-items-center justify-content-evenly">
+    <div class="mb-3 mt-3 row align-items-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-evenly">
+      {% for animal in animais %}
+    <div class="img-container mb-3 text-center justify-content-center">
     <img
-    src="{% static 'images/bonito-cao.jpg' %}"
-    class="img-home"
-    alt="gato andando"
+    src="{{ animal.imagem.url}}"
+    class="img-home img-fluid"
+    alt="{{ animal.nome }}"
   />
-    <img
-    src="{% static 'images/lindo-cachorro.jpg' %}"
-    class="img-home m-2 img-thumbnail"
-    alt="cachorro"
-  />
-  <img
-  src="{% static 'images/gatinho.jpg' %}"
-  class="img-home img-thumbnail"
-  alt="cachorro"
-/>
-  <img
-  src="{% static 'images/gatinho-fofo.jpg' %}"
-  class="img-home m-2 img-thumbnail"
-  alt="cachorro"
-/>    
+  </div>
+  {% endfor %}
   </div>
 </div>
     {% endblock %}
