@@ -18,13 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from base.views import home, adocao, animal, sobre_nos, como_ajudar
+from base.views import home, adocao, animal_detalhes, sobre_nos, como_ajudar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('adocao/', adocao, name='adocao'),
-    path('animal/', animal),
+    path('animal_detalhes/<int:animal_id>/', animal_detalhes, name='animal_detalhes'),
     path('como-ajudar/', como_ajudar),
     path('sobre-nos/', sobre_nos),
 ]

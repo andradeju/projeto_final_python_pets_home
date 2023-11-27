@@ -20,7 +20,7 @@
         <h3 class="h5 card-title text-center">{{ animal.nome }}</h3>
         <p class="small card-text text-center">
           <strong>Idade:</strong> {{ animal.idade }} anos<br />
-          <a href="/animal" class="mt-1 btn-adocao btn btn-primary btn-sm px-2"
+          <a href="{% url 'animal_detalhes' animal.id %}" class="mt-1 btn-adocao btn btn-primary btn-sm px-2"
             >Quero adotar</a
           >
         </p>
