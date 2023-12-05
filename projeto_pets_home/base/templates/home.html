@@ -1,30 +1,69 @@
-{% extends "layout.html" %}
-{% load bootstrap5 %}
+{% extends "layout.html" %} 
+{% load bootstrap5 %} 
 {% load static %}
-<body>
-  <main class="container">
-    {% block content %} 
-    <h1>A Pet's Home</h1>
-    <p>Bem-vindo à Pet's Home, o lar amoroso para animais que aguardam ansiosamente por uma família para chamarem de sua. Somos uma associação dedicada a cuidar e proteger animais desabrigados, oferecendo-lhes amor, cuidado e esperança. Nossa missão é encontrar lares adotivos para esses animais especiais, proporcionando alegria e carinho tanto para eles quanto para suas novas famílias. Explore nosso site e descubra como você pode fazer a diferença na vida de um animal necessitado. Junte-se a nós nesta jornada de compaixão e amor pelos pets!</p>
-    <div>
-    <h2 class="mt-4 text-center">Adote</h2>
-    <div class="mb-3 mt-3 row align-items-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-evenly">
-      {% for animal in animais %}
-    <div class="img-container mb-3 text-center justify-content-center">
+
+<main class="container">
+  {% block content %}
+  <h1>A Pet's Home</h1>
+  <div class="justify-content-center mt-3">
+  <p>
+    Bem-vindo à Pet's Home, o lar amoroso para animais que aguardam ansiosamente
+    por uma família. Somos uma associação dedicada a cuidar
+    e proteger animais desabrigados, oferecendo-lhes amor, cuidado e esperança.
+    Nossa missão é encontrar lares adotivos para esses animais especiais,
+    proporcionando alegria e carinho tanto para eles quanto para suas novas
+    famílias. Explore nosso site e descubra como você pode fazer a diferença.
+  </p>
+  </div>
+  <div class="text-center mt-4">
+    <h4>Encontre seu companheiro perfeito entre os animais adoráveis que aguardam ansiosamente por um lar para chamar de seu.</h4>
+  </div>
+  <h2 class="mt-5 text-center">Adote</h2>
+  <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 m-2">
+    {% for animal in animais %}
+    <div class="mb-4 mt-3 d-flex justify-content-center">
+      <a href="{% url 'animal_detalhes' animal.id %}">
+      <img
+        src="{{ animal.imagem.url}}"
+        class="img-home img-fluid"
+        alt="animais"
+      />
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="d-flex justify-content-center mb-5">
+    <a href="{% url 'adocao' %}" class="btn btn-home btn-success px-5 mb-4">Ver Mais</a>
+  </div>
+  <div class="row mt-5 mb-4">
+    <div class="col-md-6 mb-4">
+      <img
+        src="{% static 'images/home-Cute-Dog.jpg' %}"
+        class="img-thumbnail"
+        alt="cachorro-muito-fofo"
+      />
+    </div>
+    <div class="col-md-6 mb-4">
+    <h3>Nosso Compromisso: Cuidar, Proteger, Amar.</h3>
+    <p>Garantimos que cada animal receba os cuidados necessários, incluindo vacinas, cuidados veterinários e muito, muito carinho. Junte-se a nós na promoção do bem-estar animal!</p>
+      <a href="{% url 'sobre_nos' %}" class="btn btn-success">Saiba Mais</a>
+  </div>
+  <div class="col-md-6 mb-4">
     <img
-    src="{{ animal.imagem.url}}"
-    class="img-home img-fluid"
-    alt="{{ animal.nome }}"
-  />
+      src="{% static 'images/dog-home.jpg' %}"
+      class="img-thumbnail"
+      alt="cachorro-fofo"
+    />
   </div>
-  {% endfor %}
-  </div>
+  <div class="col-md-6">
+  <h3>Faça a Diferença.</h3>
+  <p>Contribua para Pet's Home. Sua doação ajuda a garantir que possamos continuar fornecendo amor, cuidados e esperança a animais necessitados. Saiba como se tornar um parceiro na causa do bem-estar animal.</p>
+  <a href="{% url 'como_ajudar' %}" class="btn btn-success">Como ajudar</a>
 </div>
-    {% endblock %}
-  </main>
-</body>
-</html>
-
-
-
-
+  </div>
+  <h4 class="text-center mt-5 mb-5">
+    Juntos, estamos construindo pontes de amor que conectam corações humanos a
+    patinhas peludas, transformando vidas de ambos os lados.
+  </h4>
+  {% endblock %}
+</main>

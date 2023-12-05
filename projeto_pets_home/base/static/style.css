@@ -23,6 +23,11 @@ h1,h2, h3, h4 {
   border: 2px solid #18a739;
 }
 
+.pesquisar-form {
+  border: 2px solid #18a739;
+  outline: none; 
+}
+
 .btn:hover {
   background-color: #4ccd6a !important;
 }
