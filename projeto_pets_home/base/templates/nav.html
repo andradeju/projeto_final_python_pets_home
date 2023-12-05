@@ -2,15 +2,15 @@
 {% block content %}
 <header>
   <nav class="navbar navbar-expand-sm responsive-navbar-nav">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img class="img-logo" src="{% static 'images/logo_pets-home.jpeg' %}" alt="logo">
+      <div class="container mb-4">
+          <a href="{% url 'inicio' %}">
+          <img class="img-logo" src="{% static 'images/logo-petsh.svg' %}" alt="logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto  mb-lg-0">
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="/">Início</a>
             </li>
@@ -24,6 +24,10 @@
               <a class="nav-link" href="/sobre-nos">Sobre Nós</a>
             </li>
           </ul>
+          <form class="d-flex" action="{% url 'busca_site' %}" method="get">
+            <input class="pesquisar-form form-control me-2" type="search" name="q" placeholder="Pesquisar" aria-label="Pesquisar">
+            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+          </form>
         </div>
       </div>
     </nav>

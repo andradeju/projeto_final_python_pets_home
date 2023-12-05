@@ -1,0 +1,50 @@
+{% extends "layout.html" %} 
+{% load bootstrap5 %} 
+{% load static %}
+
+<main class="container">
+  {% block content %}
+  <h1 class="text-center">Resultados da busca</h1>
+
+  {% if has_results %}
+  <div class="row row-cols-2 row-cols-md-4 row-cols-lg-3 g-4 m-2">
+    {% for animal in filter.qs %}
+    <div class="col">
+      <div class="card" style="width: 14rem">
+        <a href="{% url 'animal_detalhes' animal.id %}" class="card-img-top">
+          <img
+            src="{{ animal.imagem.url }}"
+            class="img-fluid img-thumbnail"
+            alt="animais"
+          />
+        </a>
+        <div class="card-body text-center">
+          <h3 class="h5 card-title text-center">{{ animal.nome }}</h3>
+          <p>{{ animal.especie }}</p>
+          <a
+            href="{% url 'animal_detalhes' animal.id %}"
+            class="mt-1 btn-adocao btn btn-primary btn-sm px-2"
+            >Quero adotar</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="container-fluid text-center mt-5">
+    <div class="row justify-content-center">
+      <h5>Ops! Não conseguimos localizar sua pesquisa.</h5>
+    </div>
+    <img
+      src="{% static 'images/noresults.jpg' %}"
+      alt="sem-resultado"
+      style="width: 350px; max-height: 100%"
+    />
+    <div class="mt-4 mb-5">
+      <a href="{% url 'inicio' %}" class="btn btn-success">Voltar para home</a>
+    </div>
+  </div>
+  {% endif %} 
+  {% endblock %}
+</main>
