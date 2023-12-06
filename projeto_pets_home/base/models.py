@@ -1,7 +1,9 @@
 from django.db import models
+from animais.models import Animal
 
 # Create your models here.
 class AnimalAdocao(models.Model):
+  animal = models.ForeignKey(Animal, on_delete=models.CASCADE, null=True, blank=True)
   nome = models.CharField(max_length=51)
   email = models.EmailField(max_length=77)
   cpf = models.CharField(max_length=11)
@@ -16,6 +18,7 @@ class AnimalAdocao(models.Model):
   emCasoDeViagem = models.TextField()
   experienciaAnterior = models.TextField()
   temAnimal = models.BooleanField(choices=[(True, 'Sim'), (False, 'Não')], default=False)
+  status = models.CharField(max_length=22, choices=[('Pendente', 'Pendente'), ('Aprovada', 'Aprovada'), ('Recusada', 'Recusada')], default='Pendente')
   data = models.DateTimeField(auto_now_add=True)
   def __str__(self):
     return f'{self.nome} [{self.cpf}]'

@@ -2,7 +2,7 @@ from django import forms
 from base.models import AnimalAdocao
 
 
-class AnimalForm(forms.Form):
+class AnimalForm(forms.ModelForm):
   ESTADOS_CHOICES = (
     ('AC', 'Acre'),
     ('AL', 'Alagoas'),
@@ -34,7 +34,8 @@ class AnimalForm(forms.Form):
 )
   class Meta:
     model = AnimalAdocao
-    exclude = ['data']
+    exclude = ['data' ,'animal', 'status']
+  animal = forms.IntegerField(widget=forms.HiddenInput(), required=False)  
   nome = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Nome Completo'}),)
   email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder':''}),)
   cpf = forms.CharField(max_length=11, label='CPF',widget=forms.TextInput(attrs={'placeholder':'Apenas números'}),)
@@ -49,3 +50,4 @@ class AnimalForm(forms.Form):
   emCasoDeViagem = forms.CharField(label='Em caso de viagem, onde você deixará o animal adotado?', widget=forms.TextInput(attrs={'placeholder':''}),)
   experienciaAnterior = forms.CharField(label='Experiência Anterior com Animais de Estimação', widget=forms.Textarea(attrs={'placeholder':'', 'rows': '2'}),)
   temAnimal = forms.ChoiceField(label='Tem algum animal em sua residência?', choices=[(True, 'Sim'), (False, 'Não')], widget=forms.RadioSelect)
+  

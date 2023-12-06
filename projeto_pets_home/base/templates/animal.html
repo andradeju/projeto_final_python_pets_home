@@ -1,20 +1,21 @@
 {% extends "layout.html" %} 
 {% load bootstrap5 %} 
 
+{% block content %}
 {% if sucesso %}
 <div class="alert alert-success" role="alert">
   <i class="fa fa-check-circle"></i> Cadastro efetuado com sucesso!
 </div>
 {% endif %} 
 
-{% block content %}
 <div class="row">
   <div class="col-md-5 col-12 mx-auto d-flex justify-content-center">
-    <div class="card mt-2 card-adocao" style="width: 18rem">
+    <div class="card mt-2 card-adocao" style="width: 20rem">
       <img
         src="{{ animal.imagem.url }}"
         class="card-img-top img-thumbnail"
-        alt=""
+        alt="animal para adoção"
+        style="width: 100%; height: auto;"
       />
       <div class="card-body">
         <h3 class="h5 card-title text-center">{{ animal.nome }}</h3>
@@ -37,7 +38,7 @@
     <form action="" method="POST" id="form" class="small-form">
       {% csrf_token %} 
       {% bootstrap_form form %}
-      <button type="submit" class="btn btn-primary btn-block">
+      <button type="submit" class="btn btn-cadastro btn-primary btn-block">
         Finalizar cadastro
       </button>
     </form>
