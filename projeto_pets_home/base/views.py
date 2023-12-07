@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, reverse
 from base.forms import AnimalForm
 from base.models import AnimalAdocao
 from animais.models import Animal
@@ -33,14 +33,14 @@ def animal_detalhes(request, animal_id):
             form.cleaned_data['animal'] = animal_inst
             AnimalAdocao.objects.create(**form.cleaned_data)
             contexto['sucesso'] = True
-            return HttpResponseRedirect(request.path_info)
-        else:
-            print(form.errors)
+            return HttpResponseRedirect(reverse('confirm_adocao'))
     else:
         form = AnimalForm(initial={'animal': animal_id})  
         contexto['form'] = form      
     return render(request, 'animal.html', contexto)
 
+def confirmacao_cadastro_adocao(request):
+    return render(request, 'confirmacao_cadastro_adocao.html')
 
 def busca_site(request):
     query = request.GET.get('q')
@@ -54,10 +54,11 @@ def busca_site(request):
 
     return render(request, 'busca_resultados.html', {'filter': animal_filter, 'has_results': has_results})
 
-
 def como_ajudar(request):
     return render(request, 'como_ajudar.html')
 
+def blog(request):
+    return render(request, 'blog.html')
 
 def sobre_nos(request):
     return render(request, 'sobre_nos.html')

@@ -1,0 +1,23 @@
+{% extends "layout.html" %} 
+{% load bootstrap5 %} 
+{% load static %}
+
+<main class="container-fluid">
+  {% block content %}
+  <div class="col-md-9 mx-auto text-center">
+    <div class="mb-4">
+  <h2 class="mb-3">Parabéns! Seu cadastro foi realizado com sucesso!</h2>
+      <h5>Agora é só aguardar. Em breve, você receberá um e-mail contendo detalhes sobre a aprovação do seu pedido de adoção.</h5> 
+    </div>
+      <img
+      src="{% static 'images/IMG_3192.jpg' %}"
+      class="img-thumbnail"
+      alt="cachorro-sorrindo"
+      style="width: 340px; max-width: 100%"
+    />
+  </div>
+  <div class="mt-4 mb-5 text-center">  
+      <a href="{% url 'inicio' %}" class="btn btn-success">Voltar para home</a>
+  </div>    
+  {% endblock %}
+</main>
