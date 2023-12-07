@@ -1,0 +1,29 @@
+{% extends "layout.html" %} 
+{% load bootstrap5 %} 
+{% load static %} 
+{% block content %}
+<main class="container-fluid">
+  <h1 class="text-center">Blog</h1>
+  <div class="text-center row mt-4">
+    <h3>A Relação entre Animais de Estimação e Saúde Mental:</h3>
+    <p>Como os animais podem melhorar a saúde mental.</p>
+    <img
+    src="{% static 'images/IMG_3192.jpg' %}"
+    class="img-thumbnail mt-3 mb-4"
+    style="width: 320px;"
+    alt="cachorro-feliz"
+  />
+  </div>
+  <div class="text-center row mt-3">
+    <h3>Enriquecimento ambiental: o que é e como fazer para cães e gatos</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, ratione enim dolore quidem est eius maiores at! Quibusdam voluptatum, natus nesciunt aspernatur iure dicta numquam soluta ullam ipsa necessitatibus quasi?</p>
+  </div>
+  <div class=" text-center row mt-4">
+    <h2 class="text-center mb-4">Finais Felizes</h2>
+  </div>
+  <h4 class="text-center mt-5 mb-5">
+    Juntos, estamos construindo pontes de amor que conectam corações humanos a
+    patinhas peludas, transformando vidas de ambos os lados.
+  </h4>
+</main>
+{% endblock %}

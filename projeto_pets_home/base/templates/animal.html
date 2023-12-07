@@ -2,15 +2,9 @@
 {% load bootstrap5 %} 
 
 {% block content %}
-{% if sucesso %}
-<div class="alert alert-success" role="alert">
-  <i class="fa fa-check-circle"></i> Cadastro efetuado com sucesso!
-</div>
-{% endif %} 
-
 <div class="row">
-  <div class="col-md-5 col-12 mx-auto d-flex justify-content-center">
-    <div class="card mt-2 card-adocao" style="width: 20rem">
+  <div class="col-md-10 col-12 mx-auto d-flex justify-content-center">
+    <div class="card mt-2 card-adocao" style="width: 22rem">
       <img
         src="{{ animal.imagem.url }}"
         class="card-img-top img-thumbnail"
