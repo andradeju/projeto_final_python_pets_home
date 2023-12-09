@@ -2,6 +2,22 @@
 {% load bootstrap5 %} 
 
 {% block content %}
+{% if erro %}
+<div class="row">
+  <div class="mt-3 col-md-8 col-12 mx-auto">
+    <div class="alert alert-danger">
+      <strong>Erro no formulário:</strong>
+      <ul>
+        {% for field, errors in form.errors.items %}
+          {% for error in errors %}
+            <li>{{ field }}: {{ errors|join:", " }}</li>
+          {% endfor %}
+        {% endfor %}  
+      </ul>
+    </div>
+  </div>
+</div>
+{% endif %}
 <div class="row">
   <div class="col-md-10 col-12 mx-auto d-flex justify-content-center">
     <div class="card mt-2 card-adocao" style="width: 22rem">
@@ -24,6 +40,7 @@
     </div>
   </div>
 </div>
+
 <div class="row">
 <div class="col-md-8 col-12 mx-auto">
 <div class="card mt-4">

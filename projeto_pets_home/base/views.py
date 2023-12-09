@@ -5,7 +5,6 @@ from base.forms import AnimalForm
 from base.models import AnimalAdocao
 from animais.models import Animal
 from animais.filters import AnimalFilter
-from django.db.models import Q
 
 
 def home(request):
@@ -34,13 +33,18 @@ def animal_detalhes(request, animal_id):
             AnimalAdocao.objects.create(**form.cleaned_data)
             contexto['sucesso'] = True
             return HttpResponseRedirect(reverse('confirm_adocao'))
+        else:
+            contexto['erro'] = True
+            contexto['form'] = form
     else:
-        form = AnimalForm(initial={'animal': animal_id})  
-        contexto['form'] = form      
+        form = AnimalForm(initial={'animal': animal_id})
+        contexto['form'] = form
     return render(request, 'animal.html', contexto)
+
 
 def confirmacao_cadastro_adocao(request):
     return render(request, 'confirmacao_cadastro_adocao.html')
+
 
 def busca_site(request):
     query = request.GET.get('q')
@@ -54,11 +58,14 @@ def busca_site(request):
 
     return render(request, 'busca_resultados.html', {'filter': animal_filter, 'has_results': has_results})
 
+
 def como_ajudar(request):
     return render(request, 'como_ajudar.html')
 
+
 def blog(request):
     return render(request, 'blog.html')
+
 
 def sobre_nos(request):
     return render(request, 'sobre_nos.html')
