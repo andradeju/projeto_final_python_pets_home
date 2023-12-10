@@ -120,6 +120,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "base/static",
 ]
+# Diretório no qual o collectstatic reunirá os arquivos estáticos
+STATIC_ROOT = 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
