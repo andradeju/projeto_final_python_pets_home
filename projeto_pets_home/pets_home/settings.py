@@ -122,7 +122,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "base/static",
 ]
 # Diretório no qual o collectstatic reunirá os arquivos estáticos
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles'),
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
