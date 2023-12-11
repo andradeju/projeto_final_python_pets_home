@@ -11,6 +11,8 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE','projeto_pets_home.pets_home.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE','pets_home.settings')
 
 application = get_wsgi_application()
+
+app = application
