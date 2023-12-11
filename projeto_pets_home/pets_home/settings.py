@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'base',
+    'projeto_pets_home.base',
     'bootstrap5',
     'animais',
     'rest_framework',
