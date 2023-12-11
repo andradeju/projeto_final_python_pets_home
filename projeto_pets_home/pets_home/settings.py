@@ -14,6 +14,8 @@ SECRET_KEY = 'django-insecure-r0y57c1#)_6v0tcy9x!6)x5)rj8w0f9=&uqfpf1nkqla4@)2hj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+ALLOWED_HOSTS = ['*']
+WSGI_APPLICATION = os.environ.get('WSGI_APPLICATION', 'mysite.wsgi.application')
 
 
 
